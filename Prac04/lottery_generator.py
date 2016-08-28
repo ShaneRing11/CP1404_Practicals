@@ -13,6 +13,7 @@ def get_picks():
             pick = random.randrange(1, 46)
         picks.append(pick)
     picks = sorted(picks)
-    print(picks)
-
+    for pick in picks[:-1]:
+        print("{:>2} ".format(pick), end="")
+    print(picks[-1])
 main()
