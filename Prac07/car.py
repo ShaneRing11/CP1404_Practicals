@@ -10,7 +10,7 @@ class Car:
         fuel: float, one unit of fuel drives one kilometre """
         self.fuel = fuel
         self.odometer = 0
-        self.name = 'Car'
+        self.name = 'car'
 
     def add_fuel(self, amount):
         """ add amount to the car's fuel"""
