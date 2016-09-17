@@ -1,12 +1,13 @@
 class Guitar:
-    def __init__(self, name='', year=0, cost=0):
+    def __init__(self, name='', year=0, cost=0.0):
         self.name = name
         self.year = year
         self.cost = cost
 
     def __str__(self):
-        return "{} ({}) : ${}".\
-            format(self.name, self.year, self.cost)
+        vintage_string = self.is_vintage(self.year)
+        return "Guitar {}: {:>20} ({}), worth ${:10,.2f} {}".\
+            format(i + 1, self.name, self.year, self.cost, vintage_string)
 
     def get_age(self, year):
         age = 2016 - year
@@ -14,8 +15,7 @@ class Guitar:
 
     def is_vintage(self, year):
         age = self.get_age(year)
-        print(age)
         if age >= 50:
-            return True
+            return "(Vintage)"
         else:
-            return False
+            return ""
